@@ -1,0 +1,31 @@
+// specify the express using for this api
+// and fix the model used by mongoose in the database
+var express = require('express'),
+  app = express(),
+  port = process.env.PORT || 3000,
+  mongoose = require('mongoose'),
+  Task = require('./api/models/todoListModel'), //created model loading here
+  bodyParser = require('body-parser');
+  
+// mongoose instance connection url connection
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/Tododb'); 
+
+// the body parser containing data
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+// imort route to the api
+var routes = require('./api/routes/todoListRoutes'); //importing route
+routes(app); //register the route
+
+// add a middaleware to check the route 
+app.use(function(req, res) {
+    res.status(404).send({url: 'This request \''+req.originalUrl + '\' not found'})
+});
+
+// listening port : server
+app.listen(port);
+
+// message clear
+console.log('todo list RESTful API server started on: ' + port);
