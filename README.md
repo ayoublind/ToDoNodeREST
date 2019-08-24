@@ -1,17 +1,22 @@
-# ToDoNodeREST
-<h1 align="center">
-  A basic TODO app with node js and mongodb using mongoose - REST API.
-</h1>
+<div id="#header" align="center">
+  <h1> ToDoNodeREST </h1>
+  <h4>
+    A basic TODO app with node js and mongodb using mongoose - REST API.
+  </h4>
+</div>
 
 **HOW TO USE IT**
-Install modules using : 
-` npm install express --save ` <br />
-` npm install mongoose --save ` <br />
-` npm install mongoose --save ` <br />
+<br />
+Install modules using : <br />
+<pre> ` npm install express --save ` </pre> <br />
+<pre> ` npm install mongoose --save ` </pre> <br />
+<pre> ` npm install mongoose --save ` </pre> <br />
 
 **RUN IT**
+<br />
 To run the server use :
-` npm run start `
+<pre> ` npm run start ` </pre>
 
 **TEST IT**
-Test the Fonctionnalities using POSTMAN by parsing this url : localhost:3000/tasks
+<br />
+<pre> Test the Fonctionnalities using POSTMAN by parsing this url : localhost:3000/tasks </pre>
